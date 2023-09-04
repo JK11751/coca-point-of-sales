@@ -1,5 +1,6 @@
 import login from '../assets/Background.png';
 import logo from '../assets/logo.jpeg'
+import clockin from '../assets/Clockin.png'
 
 
 
@@ -7,4 +8,5 @@ import logo from '../assets/logo.jpeg'
 export default {
 login,
 logo,
+clockin,
 };
