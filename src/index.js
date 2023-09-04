@@ -3,16 +3,22 @@ import React, { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Routes, Route, BrowserRouter } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 import { ChakraProvider } from '@chakra-ui/react'
 const container = document.getElementById('root');
+
 const root = ReactDOM.createRoot(container);
 
 root.render(
   <StrictMode>
     <ColorModeScript />
     <ChakraProvider>
-    <App />
+    <BrowserRouter>
+      <Routes>
+      <Route path= "/*" element= {<App/>}/>
+          </Routes>
+    </BrowserRouter>
     </ChakraProvider>
   </StrictMode>
 );

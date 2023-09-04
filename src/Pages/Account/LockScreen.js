@@ -32,7 +32,7 @@ const LockScreen = () => {
   };
 
   return (
-    <Box bgImage={images.clockin} bgSize="cover" w="100vw" h="100%">
+    <Box bgImage={images.clockin} bgSize="cover" w="100vw" h="100%" overflowX={'hidden'}>
       <Wrap justify="center" paddingTop={'150px'} spacing={'40px'}>
         <WrapItem>
           <VStack>

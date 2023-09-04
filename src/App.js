@@ -4,6 +4,7 @@ import {
   Box,
   
 } from '@chakra-ui/react';
+import { Routes, Route } from "react-router-dom";
 import Login from './Pages/Account/Login';
 import Landing from './Pages/Account/Landing';
 import LockScreen from './Pages/Account/LockScreen';
@@ -13,7 +14,14 @@ function App() {
   return (
     
       <Box >
-      <LoggedIn/>
+        <Routes>
+
+        <Route index element={<Login/>} />
+        <Route path="/loggedin" element={<LoggedIn/>} />
+        <Route path="/login" element={<Landing/>} />
+        <Route path="/lock" element={<LockScreen/>} />
+        </Routes>
+    
       </Box>
   )
    

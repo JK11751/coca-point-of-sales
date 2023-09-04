@@ -127,7 +127,7 @@ const Login = () => {
             textColor={'white'}
             borderRadius={'60px'}
             bgColor={'#FF5C00'}
-            width="443px"
+            width="400px"
             height="48px"
           >
             Running Order
