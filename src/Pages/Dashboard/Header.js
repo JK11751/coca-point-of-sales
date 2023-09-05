@@ -46,8 +46,8 @@ const Header = () => {
       as="header"
       align="center"
       p={4}
-      width={'100vw'}
-      height={'80px'}
+      width={'100%'}
+      height={'100%'}
       bg="#FFFFFF"
       black="white"
       borderBottom={'1px'}
