@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import images from '../../Constants/images';
+import images from '../Constants/images';
 import {
   Flex,
   Text,
@@ -43,15 +43,16 @@ const Header = () => {
 
   return (
     <Flex
-      as="header"
-      align="center"
-      p={4}
-      width={'100%'}
-      height={'100%'}
-      bg="#FFFFFF"
-      black="white"
-      borderBottom={'1px'}
-      borderBottomColor={'#E4E4E4'}
+   
+    align="center"
+    p={4}
+    width="100vw"
+    position='fixed'
+    height="78px"
+    bg="#FFFFFF"
+    black="white"
+    borderBottom="1px"
+    borderBottomColor="#E4E4E4"
     >
         
          <ArrowBackIcon
@@ -183,7 +184,7 @@ const Header = () => {
           justifyContent={'center'}
           alignItems={'center'}
           display={'flex'}
-          w={'144px'}
+          
           h={'36px'}
           borderRadius={'60px'}
           p={'8px'}
@@ -204,7 +205,7 @@ const Header = () => {
           justifyContent={'center'}
           alignItems={'center'}
           display={'flex'}
-          w={'182px'}
+         
           h={'36px'}
           borderRadius={'60px'}
           p={'8px'}
@@ -249,7 +250,7 @@ const Header = () => {
           <DrawerBody>
             <HStack>
               <Image px={4} color={'#FF5C00'} src={images.logo}  h={'44px'} />
-              <VStack ml={'20px'} align={'flex-start'}>
+              <VStack ml={'20px'} align={'center'}>
                 <Text
                   color={'#19191C'}
                   fontWeight={600}
@@ -340,7 +341,7 @@ const Header = () => {
               alignItems={'center'} /* Vertically center the content */
               display={'flex'} /* Make the Box a flex container */
               h={'36px'}
-              w={'200px'}
+             
               borderRadius={'60px'}
               p={'8px'}
               bgColor={'#FFF5EE'}
@@ -382,7 +383,7 @@ const Header = () => {
               src="https://bit.ly/dan-abramov"
               h={'44px'}
               w={'44px'}
-              ml={'80px'}
+             
             />
           </DrawerBody>
         </DrawerContent>
