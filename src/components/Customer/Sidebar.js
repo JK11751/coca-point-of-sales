@@ -1,14 +1,13 @@
 import React from 'react';
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
-import images from '../Constants/images';
-import { useNavigate } from 'react-router-dom';
+import images from '../../Constants/images';
+//import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
-  const navigate = useNavigate();
+ // const navigate = useNavigate();
   return (
     <Box
       padding="24px"
-      mt="78px"
       gap="12px"
       border="1px solid #E4E4E4"
       opacity="0px"
@@ -19,7 +18,6 @@ const Sidebar = () => {
       alignItems="center"
     >
       <Flex
-        onClick={() => navigate('/dashboard')}
         width="77px"
         height="78px"
         padding="12px 6px 12px 6px"
@@ -89,7 +87,7 @@ const Sidebar = () => {
         </Text>
       </Flex>
       <Flex
-        onClick={() => navigate('/table')}
+       
         width="77px"
         height="78px"
         padding="12px 6px 12px 6px"

@@ -13,10 +13,12 @@ import {
   VStack,
   Image,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import images from '../../Constants/images';
 import { FaRegUser, FaLock } from 'react-icons/fa';
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <Box bgImage={images.login} bgSize="cover" w="100vw" h="100vh" >
       <Box
@@ -122,6 +124,7 @@ const Login = () => {
             Forgort password?
           </Link>
           <Button
+           onClick={() => navigate('/dashboard')}
             marginTop={'10px'}
             marginBottom={'30px'}
             textColor={'white'}
@@ -130,7 +133,7 @@ const Login = () => {
             width="400px"
             height="48px"
           >
-            Running Order
+           Login
           </Button>
           <Text
             fontWeight={400}

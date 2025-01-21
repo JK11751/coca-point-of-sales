@@ -1,5 +1,5 @@
 import React from 'react';
-import images from '../Constants/images';
+import images from '../../Constants/images';
 import { Box, Flex, Input, Image, Button, Divider } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,6 @@ const TopBar = () => {
       bg="#FFFFFF"
       color="#E4E4E4"
       border="1px solid #E4E4E4"
-       mt="78px"
       
     >
       <Flex

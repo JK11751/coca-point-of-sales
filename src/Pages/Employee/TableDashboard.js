@@ -1,4 +1,10 @@
-import { Box, SimpleGrid } from '@chakra-ui/react';
+import {
+  Box,
+  SimpleGrid,
+  Flex,
+  Button,
+  VStack,
+} from '@chakra-ui/react';
 import React, { useState } from 'react';
 import SmallTableCard from '../../Constants/SmallTableCard';
 import LargeTableCard from '../../Constants/LargeTableCard';
@@ -44,7 +50,7 @@ const TableDashboard = () => {
     setSelectedCardId(id);
   };
 
-  const renderCards = cards => {
+  const renderCards = (cards) => {
     const rows = [];
     let currentRow = [];
     let largeCount = 0;
@@ -78,25 +84,33 @@ const TableDashboard = () => {
 
     return rows.map((row, rowIndex) => {
       const isMixedRow =
-        row.some(card => card.type === 'large') &&
-        row.some(card => card.type === 'small');
-      const columnTemplate = isMixedRow ? 'repeat(4, 1fr)' : 'repeat(4, 1fr)';
+        row.some((card) => card.type === 'large') &&
+        row.some((card) => card.type === 'small');
+      const columnTemplate = isMixedRow
+        ? 'repeat(4, 1fr)'
+        : 'repeat(4, 1fr)';
 
       return (
         <SimpleGrid
           key={rowIndex}
           columns={{
             base: 1,
-            md: row.some(card => card.type === 'large') ? 4 : 4,
+            md: row.some((card) => card.type === 'large') ? 4 : 4,
           }}
           spacing={4}
           mb={4}
-          gridTemplateColumns={{ base: '1fr', md: columnTemplate }}
+          gridTemplateColumns={{
+            base: '1fr',
+            md: columnTemplate,
+          }}
         >
           {row.map((card) =>
             card.type === 'small' ? (
-              <SmallTableCard key={card.id} isSelected={selectedCardId === card.id}
-              onClick={() => handleCardClick(card.id)} />
+              <SmallTableCard
+                key={card.id}
+                isSelected={selectedCardId === card.id}
+                onClick={() => handleCardClick(card.id)}
+              />
             ) : (
               <LargeTableCard key={card.id} />
             )
@@ -106,7 +120,54 @@ const TableDashboard = () => {
     });
   };
 
-  return <Box p={4}>{renderCards(cards)}</Box>;
+  return (
+    <Flex  top="180px">
+    
+      <Box flex="1" p={4} >
+        {renderCards(cards)}
+      </Box>
+      
+      <Box
+        width="125px"
+        border="1px solid #E4E4E4"
+        top="180px"
+        bg="white"
+      >
+        <VStack pt={4}>
+          <Button
+            variant="unstyled"
+            width="77px"
+            height="77px"
+            bgGradient="linear-gradient(220.09deg, #F97316 -1.39%, #FFA76A 112.82%)"
+            borderRadius="50px"
+          ></Button>
+          <Button
+            variant="unstyled"
+            width="77px"
+            height="77px"
+            bgGradient="linear-gradient(220.09deg, #F97316 -1.39%, #FFA76A 112.82%)"
+            borderRadius="50px"
+          ></Button>
+          <Button
+            variant="unstyled"
+            width="77px"
+            height="77px"
+            bgGradient="linear-gradient(220.09deg, #F97316 -1.39%, #FFA76A 112.82%)"
+            borderRadius="50px"
+          ></Button>
+          <Button
+            variant="unstyled"
+            width="77px"
+            height="77px"
+            bg="#FFF5EE"
+            borderRadius="50px"
+          ></Button>
+        </VStack>
+      </Box>
+
+      
+    </Flex>
+  );
 };
 
 export default TableDashboard;

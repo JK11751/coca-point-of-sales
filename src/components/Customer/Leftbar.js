@@ -15,7 +15,6 @@ import {
   Input,
   Text,
   VStack,
-  Select,
   ButtonGroup,
   Divider,
   Heading,
@@ -25,9 +24,12 @@ import {
 import { Button } from '@chakra-ui/react';
 import { Card, CardBody } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
-import images from '../Constants/images';
+import images from '../../Constants/images';
+import { BiChevronRight } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
 
-const Leftbar = () => {
+const Leftbar = ({ setIsTableDashboardVisible }) => {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAddNoteModalOpen, setIsAddNoteModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
@@ -35,10 +37,13 @@ const Leftbar = () => {
 
   const openAddNoteModal = () => setIsAddNoteModalOpen(true);
   const closeAddNoteModal = () => setIsAddNoteModalOpen(false);
+  
+  const handleSelectTableClick = () => {
+    setIsTableDashboardVisible(true);
+  };
+
   return (
     <Box
-      mt="78px"
-      overflowY="auto"
       padding="24px"
       bg="#FFFFFF"
       borderLeft="1px solid #E4E4E4"
@@ -91,13 +96,23 @@ const Leftbar = () => {
             border="1px solid #E4E4E4"
             placeholder="customer name"
           />
-          <Select
+          <Button
+            onClick={handleSelectTableClick}
+            width="full"
             variant="unstyled"
             height="48px"
             borderRadius="58px"
             border="1px solid #E4E4E4"
-            placeholder="Select table"
-          ></Select>
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            padding="12px 16px"
+            
+          >
+            <Text>Select table</Text>
+            <BiChevronRight />
+          </Button>
+
           <Button
             onClick={openAddNoteModal}
             width="full"
