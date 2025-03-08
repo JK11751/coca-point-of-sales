@@ -9,6 +9,9 @@ import food from '../assets/images/food.png'
 import coffee from '../assets/images/coffee.png'
 import search from '../assets/images/search.png'
 import card from '../assets/card.png'
+import dine from '../assets/images/dine.png'
+import reservation from '../assets/images/reservation.png'
+import takeaway from '../assets/images/takeaway.png'
 
 
 
@@ -17,6 +20,9 @@ export default {
 login,
 logo,
 clockin,
+dine,
+reservation,
+takeaway,
 beverages,
 coffee,
 appetizer,

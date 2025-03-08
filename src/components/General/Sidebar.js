@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import images from '../../Constants/images';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
- // const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <Box
       padding="24px"
@@ -37,6 +37,7 @@ const Sidebar = () => {
           borderRadius: '8px',
           color: '#FFFFFF',
         }}
+        onClick={() => navigate('/coffee')}
       >
         <Image
           src={images.coffee}
@@ -72,6 +73,7 @@ const Sidebar = () => {
           borderRadius: '8px',
           color: '#FFFFFF',
         }}
+        onClick={() => navigate('/beverages')}
       >
         <Image
           src={images.beverages}
@@ -87,7 +89,7 @@ const Sidebar = () => {
         </Text>
       </Flex>
       <Flex
-       
+   
         width="77px"
         height="78px"
         padding="12px 6px 12px 6px"
@@ -107,6 +109,7 @@ const Sidebar = () => {
           borderRadius: '8px',
           color: '#FFFFFF',
         }}
+        onClick={() => navigate('/food')}
       >
         <Image
           src={images.food}
@@ -143,6 +146,7 @@ const Sidebar = () => {
           borderRadius: '8px',
           color: '#FFFFFF',
         }}
+        onClick={() => navigate('/appetizer')}
       >
         <Image
           src={images.appetizer}
@@ -177,6 +181,7 @@ const Sidebar = () => {
           borderRadius: '8px',
           color: '#FFFFFF',
         }}
+        onClick={() => navigate('/bread')}
       >
         <Image
           src={images.bread}
@@ -211,6 +216,7 @@ const Sidebar = () => {
           borderRadius: '8px',
           color: '#FFFFFF',
         }}
+        onClick={() => navigate('/snack')}
       >
         <Image
           src={images.snack}

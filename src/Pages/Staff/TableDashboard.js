@@ -6,8 +6,8 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import SmallTableCard from '../../Constants/SmallTableCard';
-import LargeTableCard from '../../Constants/LargeTableCard';
+import SmallTableCard from '../../components/Cards/SmallTableCard';
+import LargeTableCard from '../../components/Cards/LargeTableCard';
 
 const TableDashboard = () => {
   const [selectedCardId, setSelectedCardId] = useState(null);

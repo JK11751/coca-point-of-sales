@@ -1,4 +1,8 @@
 import React from 'react';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../redux/features/AuthSlice';
+
 import {
   Box,
   FormControl,
@@ -19,6 +23,24 @@ import { FaRegUser, FaLock } from 'react-icons/fa';
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.auth);
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    dispatch(login({ email, password }))
+      .unwrap()
+      .then(() => {
+        navigate('/dashboard');
+      })
+      .catch((err) => {
+        console.error('Failed to login:', err);
+      });
+  };
+
+
   return (
     <Box bgImage={images.login} bgSize="cover" w="100vw" h="100vh" >
       <Box
@@ -88,7 +110,9 @@ const Login = () => {
                 fontSize={'16px'}
                 lineHeight={'24px'}
                 type="text"
-                placeholder="Enter username"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </InputGroup>
           </FormControl>
@@ -110,6 +134,8 @@ const Login = () => {
                 lineHeight={'24px'}
                 type="password"
                 placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </InputGroup>
           </FormControl>
@@ -124,7 +150,7 @@ const Login = () => {
             Forgort password?
           </Link>
           <Button
-           onClick={() => navigate('/dashboard')}
+             onClick={handleLogin}
             marginTop={'10px'}
             marginBottom={'30px'}
             textColor={'white'}
@@ -132,9 +158,15 @@ const Login = () => {
             bgColor={'#FF5C00'}
             width="400px"
             height="48px"
+            isLoading={loading}
           >
            Login
           </Button>
+          {error && (
+            <Text color="red.500" fontWeight={400} fontSize={'16px'} lineHeight={'24px'} align={'center'}>
+              {error}
+            </Text>
+          )}
           <Text
             fontWeight={400}
             fontSize={'16px'}

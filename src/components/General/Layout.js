@@ -1,12 +1,12 @@
 import { Box, HStack, Flex } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Sidebar from '../Customer/Sidebar';
-import TopBar from '../Customer/Topbar';
-import Leftbar from '../Customer/Leftbar';
-import Header from './Header';
-import TableDashboard from '../../Pages/Employee/TableDashboard';
-import TableTopbar from '../../Pages/Employee/TableTopbar';
+import Sidebar from '../General/Sidebar';
+import TopBar from '../General/Topbar';
+import Leftbar from '../General/Leftbar';
+import Header from '../General/Header';
+import TableDashboard from '../../Pages/Staff/TableDashboard';
+import TableTopbar from '../../Pages/Staff/TableTopbar';
 
 const Layout = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
@@ -27,9 +27,9 @@ const Layout = () => {
       >
         {!isTableDashboardVisible && isSidebarVisible && <Sidebar />}
         <Flex direction="column" flex="1">
-          {isTableDashboardVisible ? <TableTopbar /> : <TopBar />}
+          {isTableDashboardVisible ? <TableTopbar /> : <TopBar  />}
           <Box flex="1" overflowY="auto">
-            {isTableDashboardVisible ? <TableDashboard /> : <Outlet />}
+            {isTableDashboardVisible ? <TableDashboard /> : <Outlet   />}
           </Box>
         </Flex>
         {!isTableDashboardVisible && (

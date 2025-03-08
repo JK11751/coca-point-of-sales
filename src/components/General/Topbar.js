@@ -4,6 +4,8 @@ import { Box, Flex, Input, Image, Button, Divider } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 const TopBar = () => {
+  
+
   return (
     <Box
       bg="#FFFFFF"
@@ -146,6 +148,7 @@ const TopBar = () => {
               color: '#FF5C00',
               borderColor: '#FF5C00',
             }}
+            
           >
             Seafood
           </Button>
@@ -174,6 +177,7 @@ const TopBar = () => {
               color: '#FF5C00',
               borderColor: '#FF5C00',
             }}
+           
           >
             Pasta
           </Button>
