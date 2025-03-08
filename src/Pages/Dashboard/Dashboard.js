@@ -23,7 +23,10 @@ const Dashboard = ({ categoryType }) => {
     padding="12px"
      
     >
-        <SimpleGrid columns={6} spacing={2}>
+    <SimpleGrid
+        columns={{ base: 1, sm: 2, md: 3, lg: 4 }} 
+        spacing={2}
+      >
           {products.map((product) => (
             <MenuCard key={product._id} product={product} />
           ))}

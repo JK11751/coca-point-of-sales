@@ -1,12 +1,13 @@
 import { Box, HStack, Flex } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Sidebar from '../General/Sidebar';
 import TopBar from '../General/Topbar';
 import Leftbar from '../General/Leftbar';
 import Header from '../General/Header';
 import TableDashboard from '../../Pages/Staff/TableDashboard';
-import TableTopbar from '../../Pages/Staff/TableTopbar';
+import SearchBar from '../General/SearchBar';
+import DashboardNav from './DashboardNav';
 
 const Layout = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
@@ -15,7 +16,8 @@ const Layout = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
 
-  
+  const location = useLocation();
+
   return (
     <>
       <Header toggleSidebar={toggleSidebar} />
@@ -25,9 +27,12 @@ const Layout = () => {
         spacing={0}
         height="100vh"
       >
-        {!isTableDashboardVisible && isSidebarVisible && <Sidebar />}
+        {!isTableDashboardVisible && isSidebarVisible && <Sidebar /> }
         <Flex direction="column" flex="1">
-          {isTableDashboardVisible ? <TableTopbar /> : <TopBar  />}
+          {<DashboardNav />}
+         {location.pathname === '/food' && <TopBar />}
+
+          {['/beverages', '/coffee', '/appetizer', '/bread', '/snack'].includes(location.pathname) && <SearchBar />}
           <Box flex="1" overflowY="auto">
             {isTableDashboardVisible ? <TableDashboard /> : <Outlet   />}
           </Box>

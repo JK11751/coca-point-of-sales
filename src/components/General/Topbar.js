@@ -14,19 +14,6 @@ const TopBar = () => {
       
     >
       <Flex
-        
-        color="#828487"
-        fontSize="12px"
-        fontWeight="500"
-        lineHeight="18px"
-        height="34px"
-        borderBottom="1px solid #E4E4E4"
-        padding=" 8px 16px 8px 16px"
-        gap="10px"
-      >
-        <Link> Dashboard/food</Link>
-      </Flex>
-      <Flex
         alignItems="center"
         bg="#FFFFFF"
         color="#E4E4E4"

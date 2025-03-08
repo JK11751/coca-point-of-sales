@@ -33,43 +33,40 @@ const MenuCard = ({ product }) => {
     <>
       <Box
         onClick={openModal}
-        width="219px"
-        height="250px"
+        w="100%" // Makes it responsive
+        h="250px"
         bg="#FFFFFF"
-        padding="12px 8px 16px 8px"
-        gap="12px"
+        p="12px 8px 16px 8px"
         borderRadius="16px"
       >
         <Image
-          src={`${product.image}`}
-          alt="card"
-          width="203px"
-          height="158px"
+          src={product.image}
+          objectFit="cover"
+          h="158px"
           borderRadius="12px"
         />
-        <Box width="203px" height="52px" padding="0px 8px 0px 8px" gap="4px">
-          <VStack>
-            <Text
-              fontFamily="sans-serif"
-              fontSize="16px"
-              color="#19191C"
-              fontWeight="600"
-              lineHeight="24px"
-            >
-              {product.title}
-            </Text>
-            <Text
-              fontFamily="sans-serif"
-              fontSize="16px"
-              color="#F97316"
-              fontWeight="600"
-              lineHeight="24px"
-            >
-              $ {product.price}
-            </Text>
-          </VStack>
-        </Box>
+        <VStack spacing={1}>
+          <Text
+            fontFamily="sans-serif"
+            fontSize="16px"
+            color="#19191C"
+            fontWeight="600"
+            lineHeight="24px"
+          >
+            {product.title}
+          </Text>
+          <Text
+            fontFamily="sans-serif"
+            fontSize="16px"
+            color="#F97316"
+            fontWeight="600"
+            lineHeight="24px"
+          >
+            ${product.price}
+          </Text>
+        </VStack>
       </Box>
+
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <ModalOverlay />
         <ModalContent height="744px" width="470px">
@@ -247,7 +244,6 @@ const MenuCard = ({ product }) => {
                   </Flex>
                 </CardBody>
               </Card>
-              
             </Flex>
             <Divider orientation="horizontal" />
             <Text mt={4}>Add note</Text>

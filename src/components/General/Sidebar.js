@@ -37,7 +37,7 @@ const Sidebar = () => {
           borderRadius: '8px',
           color: '#FFFFFF',
         }}
-        onClick={() => navigate('/coffee')}
+        onClick={() => navigate('/food')}
       >
         <Image
           src={images.coffee}
@@ -49,7 +49,7 @@ const Sidebar = () => {
         />
 
         <Text fontSize="sm" mt={2}>
-          Coffee
+          Food
         </Text>
       </Flex>
 
@@ -109,7 +109,7 @@ const Sidebar = () => {
           borderRadius: '8px',
           color: '#FFFFFF',
         }}
-        onClick={() => navigate('/food')}
+        onClick={() => navigate('/coffee')}
       >
         <Image
           src={images.food}
@@ -122,7 +122,7 @@ const Sidebar = () => {
         />
 
         <Text fontSize="sm" mt={2}>
-          Food
+          Coffee
         </Text>
       </Flex>
 
