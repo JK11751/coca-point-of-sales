@@ -1,7 +1,6 @@
 import React from 'react';
 import images from '../../Constants/images';
 import { Box, Flex, Input, Image, Button, Divider } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
 
 const TopBar = () => {
   
